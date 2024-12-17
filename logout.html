@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logout - SMKN 3 Garut</title>
+
+  <!-- Sertakan Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+
+  <script>
+    // Konfigurasi Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyCguY2dLeXfVRj-OuvVCe3T0s2qA3lMt_g",
+      authDomain: "smkn3garut-d369a.firebaseapp.com",
+      projectId: "smkn3garut-d369a",
+      storageBucket: "smkn3garut-d369a.firebasestorage.app",
+      messagingSenderId: "108909145061",
+      appId: "1:108909145061:web:ee2323aa7a66946652dd0c",
+      measurementId: "G-VEYSBKGW9J"
+    };
+
+    // Inisialisasi Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // Fungsi Logout
+    function logout() {
+      auth.signOut().then(() => {
+        alert('Anda telah logout');
+        // Arahkan ke halaman login setelah logout
+        window.location.href = "https://sanomush.github.io/loginsmkn3garut/"; // Ganti dengan URL halaman login Anda
+      }).catch((error) => {
+        console.error('Error saat logout:', error);
+        alert('Terjadi kesalahan saat logout.');
+      });
+    }
+
+    // Logout secara otomatis saat halaman dimuat
+    window.onload = function() {
+      logout();
+    };
+  </script>
+</head>
+<body>
+  <h2>Logging out...</h2>
+</body>
+</html>
