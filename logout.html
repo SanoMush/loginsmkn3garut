@@ -29,8 +29,8 @@
     function logout() {
       auth.signOut().then(() => {
         alert('Anda telah logout');
-        // Arahkan ke halaman login setelah logout
-        window.location.href = "https://sanomush.github.io/loginsmkn3garut/"; // Ganti dengan URL halaman login Anda
+        // Mengarahkan ke halaman login setelah logout pada tab yang sama
+        window.location.replace("https://sanomush.github.io/loginsmkn3garut/"); // Ganti dengan URL halaman login Anda
       }).catch((error) => {
         console.error('Error saat logout:', error);
         alert('Terjadi kesalahan saat logout.');
